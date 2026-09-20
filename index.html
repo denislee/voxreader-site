@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VoxReader</title>
+<meta name="description" content="VoxReader — an offline text-to-speech reader for iPhone.">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #fbfaf8;
+    --ink: #1a1815;
+    --muted: #5d5850;
+    --rule: #e3ded5;
+    --accent: #8a5a2b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141312;
+      --ink: #eae6df;
+      --muted: #a29a8e;
+      --rule: #2e2b27;
+      --accent: #d9a86c;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 17px/1.65 ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
+    padding: 0 20px 96px;
+  }
+  main { max-width: 42rem; margin: 0 auto; }
+  header { padding: 72px 0 40px; border-bottom: 1px solid var(--rule); }
+  .eyebrow {
+    font: 600 12px/1 ui-sans-serif, -apple-system, "Segoe UI", system-ui, sans-serif;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 14px;
+  }
+  h1 {
+    font-size: clamp(2rem, 6vw, 2.9rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+    font-weight: 600;
+  }
+  .lede { font-size: 1.15rem; color: var(--muted); margin: 0; }
+  ul { list-style: none; padding: 0; margin: 40px 0 0; }
+  li { padding: 18px 0; border-bottom: 1px solid var(--rule); }
+  a { color: var(--accent); }
+  .note { color: var(--muted); font-size: .95rem; margin-top: 40px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">VoxReader</p>
+    <h1>An offline reader that reads aloud.</h1>
+    <p class="lede">Books, articles and feeds, spoken on your iPhone.</p>
+  </header>
+  <ul>
+    <li><a href="support.html">Support</a> — how to use it, and how to reach a person.</li>
+    <li><a href="privacy.html">Privacy policy</a> — what leaves the device, and what does not.</li>
+  </ul>
+  <p class="note">Questions: <a href="mailto:voxreaderapp@gmail.com">voxreaderapp@gmail.com</a></p>
+</main>
+</body>
+</html>
