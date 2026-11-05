@@ -138,7 +138,7 @@
   <p class="lede">VoxReader collects nothing about you. There is no account, no analytics,
   no advertising and no tracking. This page exists to say exactly what does leave your
   device, when, and at whose request.</p>
-  <p class="dates">Effective 20 September 2026 · Last updated 20 September 2026</p>
+  <p class="dates">Effective 20 September 2026 · Last updated 5 November 2026</p>
 </header>
 
 <div class="headline">
@@ -146,8 +146,9 @@
   <p>Your library, your reading positions, your listening history and your settings stay on
   your device. The developer of VoxReader operates no server, receives no copy of anything
   you read, and has no way to identify you.</p>
-  <p>The app does make network requests — but only to addresses you chose, and only for
-  the feature you asked for. Every one of them is listed below.</p>
+  <p>The app does make network requests, for the features you use and for the feeds and
+  settings you have turned on. Some of them run without a tap of yours, such as a feed
+  refreshing in the background. Every one of them is listed below.</p>
 </div>
 
 <h2>What VoxReader collects</h2>
@@ -173,11 +174,16 @@ there is no service on the other end to transmit it to.</p>
 they may be included in your own encrypted device backup — that is Apple's mechanism and
 your account, not the developer's.</p>
 
+<p>Library sync is the one feature that copies books off the device, and it is off until you
+turn it on. It sends your books and reading positions either to your own private iCloud
+database or to a folder you pick in Files, where that folder's provider (Google Drive or
+Dropbox, for example) moves them. The developer can see neither.</p>
+
 <h2>When VoxReader uses the network</h2>
 
 <p>VoxReader is an offline reader by design: reading a book aloud with the device's own
-voices requires no network at all. The app connects only in these situations, each of which
-you initiate.</p>
+voices requires no network at all. The app connects only in these situations. Most follow
+directly from something you do; the ones that happen later on your behalf say so.</p>
 
 <table>
   <thead>
@@ -185,9 +191,31 @@ you initiate.</p>
   </thead>
   <tbody>
     <tr>
-      <td>Add or refresh an RSS / Atom / JSON feed</td>
-      <td>The feed's own address, which you entered</td>
-      <td>An ordinary HTTP request for that feed</td>
+      <td>Subscribe to an RSS / Atom / JSON feed. It then refreshes on its own, including in
+      the background</td>
+      <td>The feed's address, the sites its articles come from, and their pictures and site
+      icons</td>
+      <td>Ordinary HTTP requests for those pages and files, so articles can be read offline</td>
+    </tr>
+    <tr>
+      <td>Have Hacker News articles in a feed, with Save Comments for Offline on (the
+      default)</td>
+      <td><code>hn.algolia.com</code> and <code>hacker-news.firebaseio.com</code>, for every
+      Hacker News article that arrives, even if you never open its comments</td>
+      <td>The Hacker News item number of that article</td>
+    </tr>
+    <tr>
+      <td>Search Wikipedia or import an article from it</td>
+      <td><code>&lt;language&gt;.wikipedia.org</code>, and <code>*.wikimedia.org</code> for
+      pictures</td>
+      <td><strong>What you type in the search box, as you type it</strong>, and the article
+      you choose</td>
+    </tr>
+    <tr>
+      <td>Download a neural voice</td>
+      <td><code>huggingface.co</code>, which hosts the voice files</td>
+      <td>A request for those files. The voice then runs on your device, and your text is not
+      sent anywhere</td>
     </tr>
     <tr>
       <td>Browse or download a public-domain book</td>
@@ -209,10 +237,10 @@ you initiate.</p>
 
 <p>Those servers are operated by other people, and their own privacy policies govern what
 they log — typically an IP address and a request line, as any web server does. VoxReader
-sends nothing that identifies <em>you</em> with these requests. Requests to book catalogues
-identify the <em>app</em>, as a polite client should:
-<code>VoxReader/1.0.0 (+mailto:voxreaderapp@gmail.com)</code> — the app's name, its version,
-and an address to complain to. There is no user identifier, no device identifier and no
+sends no account or identifier of yours with these requests. Requests to book catalogues and
+Wikipedia identify the <em>app</em>, as a polite client should:
+<code>VoxReader/&lt;version&gt; (+mailto:voxreaderapp@gmail.com)</code> — the app's name, its
+version, and an address to complain to. There is no user identifier, no device identifier and no
 account in it.</p>
 
 <h2>The two online voices</h2>
@@ -287,7 +315,7 @@ say so before that version ships, and the date at the top will change.</p>
      support address, and a bounce is a rejection. -->
 
 <footer>
-  VoxReader — an offline text-to-speech reader for iPhone.
+  VoxReader — an offline text-to-speech reader for iPhone and iPad.
   <a href="support.html">Support</a>
 </footer>
 
